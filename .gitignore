@@ -1,0 +1,6 @@
+.idea
+.vs_code
+drf_role.egg*
+dist
+__pycache__
+*.pyc
