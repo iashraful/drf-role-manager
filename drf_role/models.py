@@ -5,7 +5,7 @@ from drf_role.enums import PermissionEnum, RoleEnum
 
 class Role(models.Model):
     name = models.CharField(max_length=30, blank=True, null=True)
-    type = models.IntegerField(default=RoleEnum.STAFF.value, unique=True)
+    type = models.IntegerField(unique=True)
     description = models.TextField(verbose_name='Role\'s Description', blank=True)
 
     def __str__(self):

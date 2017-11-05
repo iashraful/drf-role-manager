@@ -6,10 +6,10 @@ from drf_role.enums import RoleEnum, PermissionEnum
 from drf_role.models import AccessControl
 
 
-class IsAdminOrDeveloperOrNoAccess(permissions.IsAuthenticated):
+class IsAdminOrNoAccess(permissions.IsAuthenticated):
     def has_permission(self, request, view):
         try:
-            return request.user.profile.role.type in [RoleEnum.ADMIN.value, RoleEnum.DEVELOPER.value]
+            return request.user.profile.role.type == RoleEnum.ADMIN.value
         except AttributeError:
             return False
 

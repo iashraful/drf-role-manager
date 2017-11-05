@@ -5,25 +5,25 @@ from rest_framework.views import APIView
 
 from drf_role.helpers.url_list_helper import get_urls
 from drf_role.models import Role, Permission, AccessControl
-from drf_role.permissions import IsAdminOrDeveloperOrNoAccess
+from drf_role.permissions import IsAdminOrNoAccess
 from drf_role.serializers import RoleSerializer, PermissionSerializer, AccessControlSerializer, AllViewListSerializer
 
 
 class RoleView(generics.ListCreateAPIView):
-    permission_classes = (IsAdminOrDeveloperOrNoAccess,)
+    permission_classes = (IsAdminOrNoAccess,)
     serializer_class = RoleSerializer
     queryset = Role.objects.all()
 
 
 class PermissionView(generics.ListCreateAPIView):
-    permission_classes = (IsAdminOrDeveloperOrNoAccess,)
+    permission_classes = (IsAdminOrNoAccess,)
     serializer_class = PermissionSerializer
     queryset = Permission.objects.all()
     models = (Permission,)
 
 
 class AccessControlView(generics.ListCreateAPIView):
-    permission_classes = (IsAdminOrDeveloperOrNoAccess,)
+    permission_classes = (IsAdminOrNoAccess,)
     serializer_class = AccessControlSerializer
     queryset = AccessControl.objects.all()
 
@@ -41,7 +41,7 @@ class AccessControlView(generics.ListCreateAPIView):
 
 
 class AllUrlList(APIView):
-    permission_classes = (IsAdminOrDeveloperOrNoAccess,)
+    permission_classes = (IsAdminOrNoAccess,)
 
     def get(self, request, *args, **kwargs):
         data = {

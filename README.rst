@@ -23,9 +23,9 @@ Quick start
 3. Run `python manage.py migrate` to create the drf_role models.
 
 4. Start the development server and visit,
-    http://127.0.0.1:8000/api/<VERSION>/roles/
-    http://127.0.0.1:8000/api/<VERSION>/permissions/
-    http://127.0.0.1:8000/api/<VERSION>/accesses/
-    http://127.0.0.1:8000/api/<VERSION>/all-urls/
+    http://127.0.0.1:8000/api/v1/roles/
+    http://127.0.0.1:8000/api/v1/permissions/
+    http://127.0.0.1:8000/api/v1/accesses/
+    http://127.0.0.1:8000/api/v1/all-urls/
 
 Please look up on docs for details...

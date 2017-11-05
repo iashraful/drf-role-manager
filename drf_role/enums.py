@@ -9,5 +9,3 @@ class PermissionEnum(Enum):
 
 class RoleEnum(Enum):
     ADMIN = 0
-    STAFF = 1
-    DEVELOPER = 2

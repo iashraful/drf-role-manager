@@ -1,5 +1,6 @@
 .idea
 .vs_code
+.vscode
 drf_role.egg*
 dist
 __pycache__
