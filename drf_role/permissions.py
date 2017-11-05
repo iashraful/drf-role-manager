@@ -33,6 +33,10 @@ class BaseRolePermission(BasePermission):
             if access:
                 permission_types = access.permissions.values_list('access_type', flat=True)
                 write_permission = PermissionEnum.WRITE.value
+                no_access = PermissionEnum.NO_ACCESS.value
+
+                if no_access in permission_types:
+                    return False
 
                 if write_permission in permission_types:
                     return True
