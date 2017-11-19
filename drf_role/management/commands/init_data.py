@@ -10,13 +10,18 @@ class Command(BaseCommand):
         # Creating permissions
         for enum in PermissionEnum:
             with transaction.atomic():
-                Permission.objects.get_or_create(access_type=enum.value, access_type_name=enum.name)
-
+                try:
+                    Permission.objects.get_or_create(access_type=enum.value, access_type_name=enum.name)
+                except Exception:
+                    continue
         print("Permissions Loaded.")
 
         # Creating role
         for enum in RoleEnum:
             with transaction.atomic():
-                Role.objects.get_or_create(name=enum.name, type=enum.value)
+                try:
+                    Role.objects.get_or_create(name=enum.name, type=enum.value)
+                except Exception:
+                    continue
 
         print("Role Created.")

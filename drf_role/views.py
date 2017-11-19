@@ -33,8 +33,15 @@ class AccessControlView(generics.ListCreateAPIView):
             permission_instance_list = [p for p in Permission.objects.filter(pk__in=permissions)]
             serializer = AccessControlSerializer(data=request.data)
             if serializer.is_valid(raise_exception=True):
-                instance = serializer.save()
+                instance = AccessControl.objects.filter(
+                    role_id=request.data.get('role'), url_name=request.data.get('url_name')
+                ).first()
+                if instance is None:
+                    instance = serializer.save()
                 if instance:
+                    # First Clear all permissions
+                    instance.permissions.clear()
+                    # Add Permission
                     instance.permissions.add(*permission_instance_list)
                     return Response(serializer.data)
             return Response(serializer.data)
