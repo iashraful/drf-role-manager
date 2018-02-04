@@ -9,11 +9,11 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='drf-role',
-    version='0.0.4',
+    version='0.0.5',
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',
-    description='A simple lightweight role manager for Dajngo REST framework.',
+    description='A simple lightweight role manager for Django REST framework.',
     long_description=README,
     url='',
     author='Ashraful Islam',
@@ -21,7 +21,7 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.11',
+        'Framework :: Django :: 1.11+',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',

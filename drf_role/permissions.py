@@ -9,7 +9,7 @@ from drf_role.models import AccessControl
 class IsAdminOrNoAccess(permissions.IsAuthenticated):
     def has_permission(self, request, view):
         try:
-            return request.user.profile.role.type == RoleEnum.ADMIN.value
+            return request.user.profile.role.type == RoleEnum.Admin.value
         except AttributeError:
             return False
 
