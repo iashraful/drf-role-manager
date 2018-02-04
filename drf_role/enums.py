@@ -8,4 +8,4 @@ class PermissionEnum(Enum):
 
 
 class RoleEnum(Enum):
-    ADMIN = 0
+    Admin = 0
