@@ -3,7 +3,7 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from drf_role.helpers.url_list_helper import get_urls
+from drf_role.utils.url_utilities import get_urls
 from drf_role.models import Role, Permission, AccessControl
 from drf_role.permissions import IsAdminOrNoAccess
 from drf_role.serializers import RoleSerializer, PermissionSerializer, AccessControlSerializer, AllViewListSerializer
